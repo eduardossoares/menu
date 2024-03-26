@@ -75,7 +75,8 @@ const updateCartModal = () => {
         <div class="flex items-center justify-between">
             <div>
                 <p class="font-bold">${item.name}</p>
-                <p>Quantidade: ${item.quantity}</p>
+                <p class="flex items-center">Quantidade: ${item.quantity} <button class="ml-6 text-xl rounded bg-green-300 text-white w-8">+</button><button class="
+                text-xl rounded ml-2 bg-gray-400 text-white w-8">-</button></p>
                 <p class="font-medium mt-2">R$${item.price.toFixed(2).replace('.', ',')}</p>
             </div>
 
@@ -115,7 +116,7 @@ const removeCartItem = (name) => {
         const item = cart[index]
 
         if (item.quantity > 1) {
-            item.quantity -= 1
+            item.quantity = 0
             updateCartModal()
             return
         }
@@ -137,10 +138,26 @@ adressInput.addEventListener("input", (event) => {
 
 checkOut.addEventListener('click', () => {
 
+    const isOpen = checkRestaurantOpen()
+    if (!isOpen) {
+        Toastify({
+            text: "Ops! Estamos Fechados no Momento...",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "#ef4444",
+            },
+        }).showToast()
+
+        return
+    }
+
     if (cart.length === 0) return
 
     if (adressInput.value === '') {
-
         adressWarning.classList.remove('hidden')
         adressWarning.classList.add('flex')
         adressInput.classList.add('border-red-500', 'rounded', 'p-1', 'px-2')
@@ -149,14 +166,14 @@ checkOut.addEventListener('click', () => {
 
     const cartItemsCheck = cart.map((item) => {
         return (
-            `(${item.quantity}) ${item.name}, Preço: R$${item.price.toFixed(2).replace('.', ',')}. \n`
+            `(${item.quantity}) ${item.name}, Preço: R$${item.price.toFixed(2).replace('.', ',')} \n`
         )
     }).join('')
 
     const message = encodeURIComponent(cartItemsCheck)
-    const phone = '5511971193928'
+    const phone = '5551985376531'
 
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${adressInput.value}.`, '_blank')
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${adressInput.value}`, '_blank')
 
     cart = []
     adressInput.value = ''
@@ -167,7 +184,7 @@ checkOut.addEventListener('click', () => {
 const checkRestaurantOpen = () => {
     const data = new Date()
     const hour = data.getHours()
-    return hour >= 18 && hour < 22
+    return hour >= 18 && hour < 23
 }
 
 const spanHour = document.querySelector('#hour')
