@@ -116,7 +116,7 @@ const removeCartItem = (name) => {
         const item = cart[index]
 
         if (item.quantity > 1) {
-            item.quantity = 0
+            item.quantity -= 1
             updateCartModal()
             return
         }
