@@ -75,8 +75,7 @@ const updateCartModal = () => {
         <div class="flex items-center justify-between">
             <div>
                 <p class="font-bold">${item.name}</p>
-                <p class="flex items-center">Quantidade: ${item.quantity} <button class="ml-6 text-xl rounded bg-green-300 text-white w-8">+</button><button class="
-                text-xl rounded ml-2 bg-gray-400 text-white w-8">-</button></p>
+                <p class="flex items-center">Quantidade: ${item.quantity}</p>
                 <p class="font-medium mt-2">R$${item.price.toFixed(2).replace('.', ',')}</p>
             </div>
 
