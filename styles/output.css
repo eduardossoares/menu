@@ -1957,6 +1957,10 @@ video {
   background-image: url('./assets/bg.png');
 }
 
+.bg-\[url\(\'\/assets\/bg\.png\'\)\] {
+  background-image: url('/assets/bg.png');
+}
+
 .decoration-slice {
   -webkit-box-decoration-break: slice;
           box-decoration-break: slice;
