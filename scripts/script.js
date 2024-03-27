@@ -8,6 +8,7 @@ const checkOut = document.querySelector('#checkout-btn')
 const cartCounter = document.querySelector('#cart-count')
 let adressInput = document.querySelector('#adress')
 const adressWarning = document.querySelector('#adress-warning')
+const lessOneBtn = document.querySelector('#less-one-btn')
 
 let cart = []
 let total = 0
@@ -75,7 +76,8 @@ const updateCartModal = () => {
         <div class="flex items-center justify-between">
             <div>
                 <p class="font-bold">${item.name}</p>
-                <p class="flex items-center">Quantidade: ${item.quantity}</p>
+                <p class="flex items-center">Quantidade: ${item.quantity} <button class="add-one-btn ml-6 text-xl rounded bg-green-300 text-white w-8" data-name="${item.name}">+</button><button 
+                class="remove-one-btn text-xl rounded ml-2 bg-gray-400 text-white w-8" data-name="${item.name}">-</button></p>
                 <p class="font-medium mt-2">R$${item.price.toFixed(2).replace('.', ',')}</p>
             </div>
 
@@ -103,12 +105,51 @@ const updateCartModal = () => {
 cartItems.addEventListener('click', (event) => {
     if (event.target.classList.contains('remove-from-cart-btn')) {
         const name = event.target.getAttribute('data-name')
-
         removeCartItem(name)
     }
+
+    if(event.target.classList.contains('add-one-btn')) {
+        const name = event.target.getAttribute('data-name')
+        addMoreOne(name)
+    }
+
+    if(event.target.classList.contains('remove-one-btn')) {
+        const name = event.target.getAttribute('data-name')
+        removeMoreOne(name)
+    }
+
 })
 
 const removeCartItem = (name) => {
+    const index = cart.findIndex(item => item.name === name)
+
+    if (index !== -1) {
+        const item = cart[index]
+
+        if (item.quantity > 1) {
+            item.quantity = 0
+            updateCartModal()
+        }
+
+        cart.splice(index, 1)
+        updateCartModal()
+    }
+}
+
+const addMoreOne = (name) => {
+    const index = cart.findIndex(item => item.name === name)
+    
+    if (index !== -1) {
+        const item = cart[index]
+
+        if (item.quantity >= 1) {
+            item.quantity += 1
+            updateCartModal()
+        }
+    }
+}
+
+const removeMoreOne = (name) => {
     const index = cart.findIndex(item => item.name === name)
 
     if (index !== -1) {
