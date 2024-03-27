@@ -1953,16 +1953,8 @@ video {
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'assets\/bg\.png\'\)\] {
-  background-image: url('assets/bg.png');
-}
-
 .bg-\[url\(\'\.\/assets\/bg\.png\'\)\] {
   background-image: url('./assets/bg.png');
-}
-
-.bg-\[url\(\'\/assets\/bg\.png\'\)\] {
-  background-image: url('/assets/bg.png');
 }
 
 .decoration-slice {
