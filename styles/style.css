@@ -11,3 +11,7 @@
 body {
     background-color: rgb(230, 234, 238);
 }
+
+#header-bg {
+    background-image: url('../assets/bg.png');
+}
