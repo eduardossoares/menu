@@ -1,3 +1,4 @@
+const body = document.querySelector('body')
 const menu = document.querySelector('#menu')
 const openCartButton = document.querySelector('#open-cart-btn')
 const closeCartButton = document.querySelector('#close-modal-btn')
@@ -7,8 +8,11 @@ const cartItems = document.querySelector('#cart-items')
 const checkOut = document.querySelector('#checkout-btn')
 const cartCounter = document.querySelector('#cart-count')
 let adressInput = document.querySelector('#adress')
+let obsInput = document.querySelector('#obs')
+let paymentInput = document.querySelector('#payment')
 const adressWarning = document.querySelector('#adress-warning')
-const lessOneBtn = document.querySelector('#less-one-btn')
+const addToCartBtn = document.querySelector('.add-to-cart-btn')
+const paymentWarning = document.querySelector('#payment-warning')
 
 let cart = []
 let total = 0
@@ -32,6 +36,10 @@ const workingModal = () => {
             modal.classList.add('hidden')
         }
     })
+
+    if(modal.classList.contains('flex')) {
+        body.classList.add('overflow-y')
+    }
 }
 workingModal()
 
@@ -53,6 +61,23 @@ const addToCart = (name, price) => {
     updateCartModal()
 }
 
+const removeToCart = (name, price) => {
+    const hasItem = cart.find(item => item.name === name)
+
+    if (hasItem) {
+        hasItem.quantity -= 1
+        return
+    }
+
+    cart.pop({
+        name,
+        price,
+        quantity: 1
+    })
+
+    updateCartModal()
+}
+
 menu.addEventListener('click', (event) => {
     let parentButton = event.target.closest('.add-to-cart-btn')
     if (parentButton) {
@@ -60,7 +85,6 @@ menu.addEventListener('click', (event) => {
         let price = parseFloat(parentButton.getAttribute('data-price'))
 
         addToCart(name, price)
-
     }
 })
 
@@ -176,6 +200,16 @@ adressInput.addEventListener("input", (event) => {
     }
 })
 
+paymentInput.addEventListener("input", (event) => {
+    let inputValue = event.target.value
+
+    if (inputValue !== '') {
+        paymentWarning.classList.add('hidden')
+        paymentWarning.classList.remove('flex')
+        paymentInput.classList.remove('border-red-500', 'rounded', 'p-1', 'px-2')
+    }
+})
+
 checkOut.addEventListener('click', () => {
 
     const isOpen = checkRestaurantOpen()
@@ -201,22 +235,30 @@ checkOut.addEventListener('click', () => {
         adressWarning.classList.remove('hidden')
         adressWarning.classList.add('flex')
         adressInput.classList.add('border-red-500', 'rounded', 'p-1', 'px-2')
+    }
+
+    if (paymentInput.value === '') {
+        paymentWarning.classList.remove('hidden')
+        paymentWarning.classList.add('flex')
+        paymentInput.classList.add('border-red-500', 'rounded', 'p-1', 'px-2')
         return
     }
 
     const cartItemsCheck = cart.map((item) => {
         return (
-            `(${item.quantity}) ${item.name}, Preço: R$${item.price.toFixed(2).replace('.', ',')} \n`
+            `${item.quantity}x ${item.name};\n`
         )
     }).join('')
 
-    const message = encodeURIComponent(cartItemsCheck)
+    const message = encodeURIComponent(`${cartItemsCheck}\nEndereço: ${adressInput.value}. \nObservações do Pedido: ${obsInput.value}. \nMétodo de pagamento: ${paymentInput.value}.`)
     const phone = '5551985376531'
 
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${adressInput.value}`, '_blank')
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank')
 
     cart = []
     adressInput.value = ''
+    obsInput.value = ''
+    paymentInput.value = ''
     updateCartModal()
 
 })
@@ -224,7 +266,7 @@ checkOut.addEventListener('click', () => {
 const checkRestaurantOpen = () => {
     const data = new Date()
     const hour = data.getHours()
-    return hour >= 14 && hour < 23
+    return hour >= 18 && hour <= 23
 }
 
 const spanHour = document.querySelector('#hour')
