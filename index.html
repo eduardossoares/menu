@@ -63,9 +63,9 @@
 
         <!--Menu-->
         <div id="menu">
-            <main class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10 mx-auto max-w-7xl pb-10">
+            <main class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 mx-auto max-w-7xl pb-10">
 
-                <div class="flex gap-4 px-6 lg:px-2">
+                <div class="flex gap-2 px-6 lg:px-2">
                     <img src="./assets/hamb-1.png" alt="Hamburguer Smash"
                         class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
 
@@ -76,25 +76,25 @@
 
                         <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
                             <p class="font-bold text-base">R$24,90</p>
-                            <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                                data-name="Hamburguer Smash" data-price="24.90">
-                                <i id="icon-cart" class="fa fa-cart-plus text-xs text-white"></i>
-                            </button>
-                            
-                            <!--Botão Remover em Processo-->
-                            <button class="hidden bg-red-500 px-4 rounded hover:scale-105 duration-200 remove-to-cart-btn"
-                                data-name="Hamburguer Smash" data-price="24.90">
-                                <i id="icon-cart" class="fa fa-cart-plus text-xs text-white"></i>
-                            </button>
-                            <!---->
-                            
+
+                            <div>
+                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
+                                    data-name="Hamburguer Smash" data-price="24.90">
+                                    <i id="icon-cart" class="fa fa-cart-plus text-xs text-white"></i>
+                                </button>
+                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
+                                    data-name="Hamburguer Smash" data-price="24.90">
+                                    <span class="text-white">-</span>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
 
-                <div class="flex gap-4 px-6 lg:px-2">
-                    <img src="./assets/hamb-2.png" alt="Hamburguer Smash"
+                <div class="flex gap-2 px-6 lg:px-2">
+                    <img src="./assets/hamb-2.png" alt="Hamburguer da Casa"
                         class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
 
                     <div>
@@ -104,17 +104,25 @@
 
                         <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
                             <p class="font-bold text-base">R$29,90</p>
-                            <button class="bg-zinc-800 px-4 rounded add-to-cart-btn hover:scale-105 duration-200"
-                                data-name="Hamburguer da Casa" data-price="29.90">
-                                <i class="fa fa-cart-plus text-xs text-white"></i>
-                            </button>
+
+                            <div>
+                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
+                                    data-name="Hamburguer da Casa" data-price="29.90">
+                                    <i class="fa fa-cart-plus text-xs text-white"></i>
+                                </button>
+                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
+                                    data-name="Hamburguer da Casa" data-price="29.90">
+                                    <span class="text-white">-</span>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
 
-                <div class="flex gap-4 px-6 lg:px-2">
-                    <img src="./assets/hamb-8.png" alt="Hamburguer Smash"
+                <div class="flex gap-2 px-6 lg:px-2">
+                    <img src="./assets/hamb-8.png" alt="Hamburguer Vegano"
                         class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
 
                     <div>
@@ -124,17 +132,23 @@
 
                         <div class="flex items-center gap-4 mt-2 lg:mt-4 justify-between">
                             <p class="font-bold text-base">R$22,90</p>
-                            <button class="bg-zinc-800 px-4 rounded add-to-cart-btn hover:scale-105 duration-200"
-                                data-name="Hamburguer Vegano" data-price="22.90">
-                                <i class="fa fa-cart-plus text-xs text-white"></i>
-                            </button>
+                            <div>
+                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
+                                    data-name="Hamburguer Vegano" data-price="22.90">
+                                    <i class="fa fa-cart-plus text-xs text-white"></i>
+                                </button>
+                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
+                                    data-name="Hamburguer Vegano" data-price="22.90">
+                                    <span class="text-white">-</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="flex gap-4 px-6 lg:px-2">
-                    <img src="./assets/hamb-7.png" alt="Hamburguer Smash"
+                <div class="flex gap-2 px-6 lg:px-2">
+                    <img src="./assets/hamb-7.png" alt="Onion Burguer"
                         class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
 
                     <div>
@@ -144,17 +158,25 @@
 
                         <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
                             <p class="font-bold text-base">R$32,90</p>
-                            <button class="bg-zinc-800 px-4 rounded add-to-cart-btn hover:scale-105 duration-200"
-                                data-name="Onion Burguer" data-price="32.90">
-                                <i class="fa fa-cart-plus text-xs text-white"></i>
-                            </button>
+
+                            <div>
+                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
+                                    data-name="Onion Burguer" data-price="32.90">
+                                    <i class="fa fa-cart-plus text-xs text-white"></i>
+                                </button>
+                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
+                                    data-name="Onion Burguer" data-price="32.90">
+                                    <span class="text-white">-</span>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
 
-                <div class="flex gap-4 px-6 lg:px-2">
-                    <img src="./assets/hamb-3.png" alt="Hamburguer Smash"
+                <div class="flex gap-2 px-6 lg:px-2">
+                    <img src="./assets/hamb-3.png" alt="Hamburguer Duplo-Queijo"
                         class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
 
                     <div>
@@ -164,17 +186,25 @@
 
                         <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
                             <p class="font-bold text-base">R$30,90</p>
-                            <button class="bg-zinc-800 px-4 rounded add-to-cart-btn hover:scale-105 duration-200"
-                                data-name="Hamburguer Duplo-Queijo" data-price="32.90">
-                                <i class="fa fa-cart-plus text-xs text-white"></i>
-                            </button>
+
+                            <div>
+                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
+                                    data-name="Hamburguer Duplo-Queijo" data-price="30.90">
+                                    <i class="fa fa-cart-plus text-xs text-white"></i>
+                                </button>
+                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
+                                    data-name="Hamburguer Duplo-Queijo" data-price="30.90">
+                                    <span class="text-white">-</span>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
 
-                <div class="flex gap-4 px-6 lg:px-2">
-                    <img src="./assets/hamb-6.png" alt="Hamburguer Smash"
+                <div class="flex gap-2 px-6 lg:px-2">
+                    <img src="./assets/hamb-6.png" alt="Hamburguer com Fritas"
                         class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
 
                     <div>
@@ -184,17 +214,25 @@
 
                         <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
                             <p class="font-bold text-base">R$20,90</p>
-                            <button class="bg-zinc-800 px-4 rounded add-to-cart-btn hover:scale-105 duration-200"
-                                data-name="Hamburguer com Fritas" data-price="20.90">
-                                <i class="fa fa-cart-plus text-xs text-white"></i>
-                            </button>
+
+                            <div>
+                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
+                                    data-name="Hamburguer com Fritas" data-price="20.90">
+                                    <i class="fa fa-cart-plus text-xs text-white"></i>
+                                </button>
+                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
+                                    data-name="Hamburguer com Fritas" data-price="20.90">
+                                    <span class="text-white">-</span>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
 
-                <div class="flex gap-4 px-6 lg:px-2">
-                    <img src="./assets/hamb-4.png" alt="Hamburguer Smash"
+                <div class="flex gap-2 px-6 lg:px-2">
+                    <img src="./assets/hamb-4.png" alt="Chicken Burguer"
                         class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
 
                     <div>
@@ -204,17 +242,25 @@
 
                         <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
                             <p class="font-bold text-base">R$24,90</p>
-                            <button class="bg-zinc-800 px-4 rounded add-to-cart-btn hover:scale-105 duration-200"
-                                data-name="Chicken Burguer" data-price="24.90">
-                                <i class="fa fa-cart-plus text-xs text-white"></i>
-                            </button>
+
+                            <div>
+                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
+                                    data-name="Chicken Burguer" data-price="24.90">
+                                    <i class="fa fa-cart-plus text-xs text-white"></i>
+                                </button>
+                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
+                                    data-name="Chicken Burguer" data-price="24.90">
+                                    <span class="text-white">-</span>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
 
-                <div class="flex gap-4 px-6 lg:px-2">
-                    <img src="./assets/hamb-5.png" alt="Hamburguer Smash"
+                <div class="flex gap-2 px-6 lg:px-2">
+                    <img src="./assets/hamb-5.png" alt="Hamburguer de Salada"
                         class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
 
                     <div>
@@ -224,10 +270,18 @@
 
                         <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
                             <p class="font-bold text-base">R$22,90</p>
-                            <button class="bg-zinc-800 px-4 rounded add-to-cart-btn hover:scale-105 duration-200"
-                                data-name="Hamburguer de Salada" data-price="22.90">
-                                <i class="fa fa-cart-plus text-xs text-white"></i>
-                            </button>
+
+                            <div>
+                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
+                                    data-name="Hamburguer de Salada" data-price="22.90">
+                                    <i class="fa fa-cart-plus text-xs text-white"></i>
+                                </button>
+                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
+                                    data-name="Hamburguer de Salada" data-price="22.90">
+                                    <span class="text-white">-</span>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
 
@@ -283,37 +337,43 @@
 
         <!--Modal-->
         <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] hidden items-center justify-center" id="modal">
-            <div class="bg-white font-semibold text-base mt-6 mb-6 p-5 rounded-md min-w-[90%] md:min-w-[600px] min-h-[30%] max-h-[80%] overflow-y-auto">
+            <div
+                class="bg-white font-semibold text-base mt-6 mb-6 p-5 rounded-md min-w-[90%] md:min-w-[600px] min-h-[30%] max-h-[80%] overflow-y-auto">
                 <h2 class="text-center text-2xl">Seu carrinho</h2>
                 <div id="cart-items" class="flex font-medium justify-between mb-2 flex-col"></div>
                 <label for="adress" class="mt-4">Endereço de entrega:</p>
-                <input type="text" placeholder="Digite aqui seu endereço..." id="adress" name="adress"
-                    class="text-base w-full p-1 border-2 outline-none placeholder:font-medium">
-
-                <p class="hidden text-red-500 text-sm font-medium mt-1 mb-4" id="adress-warning">Digite seu endereço corretamente!</p>
-                
-                <div class="mt-6">
-                    <label for="obs">Observações<span class="ml-[.1em] font-medium text-xs tracking-normal">(opcional)</span>:</p>
-                    <input type="text" placeholder="Digite aqui as observações do pedido..." id="obs" name="obs"
-                        class="text-base w-full p-1 border-2 outline-none mb-6 placeholder:font-medium">
-                </div>
-
-                <div>
-                    <label for="obs">Método de pagamento:</p>
-                    <input type="text" placeholder="Digite aqui o método de pagamento..." id="payment" name="payment"
+                    <input type="text" placeholder="Digite aqui seu endereço..." id="adress" name="adress"
                         class="text-base w-full p-1 border-2 outline-none placeholder:font-medium">
-                    <p class="hidden text-red-500 text-sm mt-1 font-medium" id="payment-warning">Digite o método de pagamento corretamente!</p>
-                </div>
-                
 
-                <p class="mt-6">Total: <span id="cart-total">R$00,00</span></p>
-                
-                <div class="mt-6 flex justify-between">
-                    <button id="close-modal-btn" class="hover:text-red-500 hover:scale-105 duration-200">Fechar</button>
-                    <button id="checkout-btn"
-                        class="bg-green-500 text-white px-2 py-1 rounded hover:scale-105 duration-200">Finalizar
-                        Pedido</button>
-                </div>
+                    <p class="hidden text-red-500 text-sm font-medium mt-1 mb-4" id="adress-warning">Digite seu endereço
+                        corretamente!</p>
+
+                    <div class="mt-6">
+                        <label for="obs">Observações<span
+                                class="ml-[.1em] font-medium text-xs tracking-normal">(opcional)</span>:</p>
+                            <input type="text" placeholder="Digite aqui as observações do pedido..." id="obs" name="obs"
+                                class="text-base w-full p-1 border-2 outline-none mb-6 placeholder:font-medium">
+                    </div>
+
+                    <div>
+                        <label for="obs">Método de pagamento:</p>
+                            <input type="text" placeholder="Digite aqui o método de pagamento..." id="payment"
+                                name="payment"
+                                class="text-base w-full p-1 border-2 outline-none placeholder:font-medium">
+                            <p class="hidden text-red-500 text-sm mt-1 font-medium" id="payment-warning">Digite o método
+                                de pagamento corretamente!</p>
+                    </div>
+
+
+                    <p class="mt-6">Total: <span id="cart-total">R$00,00</span></p>
+
+                    <div class="mt-6 flex justify-between">
+                        <button id="close-modal-btn"
+                            class="hover:text-red-500 hover:scale-105 duration-200">Fechar</button>
+                        <button id="checkout-btn"
+                            class="bg-green-500 text-white px-2 py-1 rounded hover:scale-105 duration-200">Finalizar
+                            Pedido</button>
+                    </div>
             </div>
         </div>
 
@@ -321,7 +381,8 @@
 
 
     <!--Footer-->
-    <footer class="cursor-pointer w-full bg-red-500 py-2 text-center fixed bottom-0 hover:py-3 duration-500" id="open-cart-btn">
+    <footer class="cursor-pointer w-full bg-red-500 py-2 text-center fixed bottom-0 hover:py-3 duration-500"
+        id="open-cart-btn">
         <div class="font-bold text-white">
             ( <span id="cart-count">0</span> ) Carrinho
             <i class="fa fa-cart-plus text-lg text-white"></i>

@@ -10,9 +10,12 @@ const cartCounter = document.querySelector('#cart-count')
 let adressInput = document.querySelector('#adress')
 let obsInput = document.querySelector('#obs')
 let paymentInput = document.querySelector('#payment')
+
 const adressWarning = document.querySelector('#adress-warning')
-const addToCartBtn = document.querySelector('.add-to-cart-btn')
 const paymentWarning = document.querySelector('#payment-warning')
+
+const addToCartBtn = document.querySelector('.add-to-cart-btn')
+const rmvFromCartBtn = document.querySelector('.remove-from-cart-btn')
 
 let cart = []
 let total = 0
@@ -37,10 +40,11 @@ const workingModal = () => {
         }
     })
 
-    if(modal.classList.contains('flex')) {
+    if (modal.classList.contains('flex')) {
         body.classList.add('overflow-y')
     }
 }
+
 workingModal()
 
 const addToCart = (name, price) => {
@@ -59,14 +63,25 @@ const addToCart = (name, price) => {
     })
 
     updateCartModal()
+
+    Toastify({
+        text: `${name} foi adicionado ao carrinho.`,
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "#6aa84f",
+        },
+    }).showToast()
 }
 
-const removeToCart = (name, price) => {
+const removeFromCart = (name, price) => {
     const hasItem = cart.find(item => item.name === name)
 
     if (hasItem) {
         hasItem.quantity -= 1
-        return
     }
 
     cart.pop({
@@ -76,17 +91,63 @@ const removeToCart = (name, price) => {
     })
 
     updateCartModal()
+
+    Toastify({
+        text: `${name} foi removido do carrinho.`,
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "#ef4444",
+        },
+    }).showToast()
 }
 
 menu.addEventListener('click', (event) => {
     let parentButton = event.target.closest('.add-to-cart-btn')
+    let rmvParentButton = event.target.closest('.remove-from-cart-btn')
+
     if (parentButton) {
+        cartButtons(parentButton, 'bg-zinc-800', 'bg-zinc-400')
+        cartButtons(parentButton.nextElementSibling, 'bg-red-300', 'bg-red-400')
+
         let name = parentButton.getAttribute('data-name')
         let price = parseFloat(parentButton.getAttribute('data-price'))
 
+        const hasItem = cart.find(item => item.name === name)
+
+        
+        if (hasItem) {
+            return
+        }
+        
         addToCart(name, price)
     }
+
+
+    if (rmvParentButton) {
+        cartButtons(rmvParentButton, 'bg-red-400', 'bg-red-300')
+        cartButtons(rmvParentButton.previousElementSibling, 'bg-zinc-400', 'bg-zinc-800')
+
+        let name = rmvParentButton.getAttribute('data-name')
+        let price = parseFloat(rmvParentButton.getAttribute('data-price'))
+
+        const hasItem = cart.find(item => item.name === name)
+
+        if (!hasItem) {
+            return
+        }
+
+        removeFromCart(name, price)
+    }
 })
+
+const cartButtons = (value, defaultColor, blockColor) => {
+    value.classList.add(`${blockColor}`)
+    value.classList.remove(`${defaultColor}`)
+}
 
 const updateCartModal = () => {
     cartItems.innerHTML = ''
@@ -132,12 +193,12 @@ cartItems.addEventListener('click', (event) => {
         removeCartItem(name)
     }
 
-    if(event.target.classList.contains('add-one-btn')) {
+    if (event.target.classList.contains('add-one-btn')) {
         const name = event.target.getAttribute('data-name')
         addMoreOne(name)
     }
 
-    if(event.target.classList.contains('remove-one-btn')) {
+    if (event.target.classList.contains('remove-one-btn')) {
         const name = event.target.getAttribute('data-name')
         removeMoreOne(name)
     }
@@ -162,7 +223,7 @@ const removeCartItem = (name) => {
 
 const addMoreOne = (name) => {
     const index = cart.findIndex(item => item.name === name)
-    
+
     if (index !== -1) {
         const item = cart[index]
 
