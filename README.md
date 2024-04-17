@@ -18,11 +18,9 @@ Este é um projeto feito em conjunto com o professor Matheus Fraga do canal "Suj
 
 ## Estrutura do Projeto
 
-index.html: Contém a estrutura HTML básica, incluindo a lista de tarefas e a caixa de entrada para adicionar novas tarefas.
-
-style.css: Arquivo de estilo CSS para estilizar a aparência da aplicação.
-
-script.js: O script JavaScript que manipula as interações do usuário, adicionando, removendo e marcando tarefas como concluídas
+index.html: Contém a estrutura HTML do projeto, juntamente das classes fornecidas pela biblioteca Tailwind;
+scripts/script.js: O script JavaScript que manipula as interações do usuário;
+tailwind.config: Configuração pessoal dos elementos Tailwind.
 
 ## Requisitos
 
