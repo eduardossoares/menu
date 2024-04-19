@@ -16,45 +16,12 @@ Este é um projeto feito em conjunto com o professor Matheus Fraga do canal "Suj
 
 4. Redirecionamento para o WhatsApp do estabelecimento para finalizar o pedido.
 
-## Estrutura do Projeto
-
-index.html: Contém a estrutura HTML do projeto, juntamente das classes fornecidas pela biblioteca Tailwind;
-scripts/script.js: O script JavaScript que manipula as interações do usuário;
-tailwind.config: Configuração pessoal dos elementos Tailwind.
-
-## Requisitos
-
-Para executar este projeto localmente, é necessário ter instalado:
-
-1. Node.js;
-2. npm (gerenciador de pacotes do Node.js);
-3. Tailwind.
-
-## Como Visualizar
-
-1. Clone este repositório para o seu ambiente de desenvolvimento local:
-   ```bash
-   git clone https://github.com/eduardossoares/menu.git
-   ```
-
-2. Navegue até o diretório do projeto:
-   ```bash
-   cd menu
-   ```
-
-3. Instale as dependências do projeto:
-   ```bash
-   npm install
-   ```
-4. Execute o arquivo:
-   ```bash
-   index.html
-   ```
-
 ## Tecnologias Utilizadas
 
-- JavaScript;
-- Tailwind.
+- JavaScript: Linguagem de programação para funcionalidades interativas.
+- Tailwind CSS: Framework CSS para estilização rápida e eficiente.
+- HTML: Linguagem de marcação para estruturação do conteúdo.
+- CSS: Folhas de estilo para personalização adicional.
 
 ## Autor
 
