@@ -1,393 +1,277 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html class="scroll-smooth" lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="./styles/output.css" />
 
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="./styles/output.css">
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sua Hamburgueria Aqui - Venha Desfrutar!" />
-    <meta property="og:image" content="http://127.0.0.1:5500/assets/hamb-1.png" />
-    <meta property="og:site_name" content="Sua Hamburgueria!" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script defer src="scripts/script.js"></script>
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Scroll Reveal -->
+    <script defer src="https://unpkg.com/scrollreveal"></script>
 
-    <title>Sua Hamburgueria</title>
+    <!-- JavaScript -->
+    <script defer src="script/script.js"></script>
+
+
+    <title>Meu Portfólio</title>
 </head>
 
-<body>
-    <!--Header-->
-    <header id="header-bg" class="w-full h-[420px] bg-cover bg-center">
+<body
+    class="animate-[transitionBg_5s_ease-in_infinite_alternate-reverse] bg-500% bg-gradient-to-tl from-bg-color-two to-bg-color-one min-h-[100vh] bg-fixed font-main">
+    <header id="my-header" class="top-header">
+        <nav id="navbar" class="transition ease-in-out delay-150 bg-header-color duration-300 hidden fixed top-[-15px] z-50 w-[100vw] h-[8%] text-white md:block">
+            <ul class="flex flex-row justify-center font-normal text-2xl p-8 md:gap-20 lg:gap-32">
 
-        <div class="w-full h-full flex flex-col justify-center items-center">
+                <li id="after"
+                    class="hover:scale-105 duration-150 after:content-[''] after:absolute after:bg-white after:h-[3px] after:w-0 after:left-0 after:bottom-[-10px] after:transition-[0.3s] after:hover:w-[100%]">
+                    <a href="#home">Início</a>
+                </li>
 
-            <img src="./assets/hamb-1.png" alt="Logo"
-                class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200" />
+                <li id="after"
+                    class="hover:scale-105 duration-150 after:content-[''] after:absolute after:bg-white after:h-[3px] after:w-0 after:left-0 after:bottom-[-10px] after:transition-[0.3s] after:hover:w-[100%]">
+                    <a href="#techs">Stacks</a>
+                </li>
 
-            <h1 class="text-4xl text-white mt-4 mb-4 font-bold">Hamburgueria</h1>
+                <li  id="after"
+                    class="hover:scale-105 duration-150 after:content-[''] after:absolute after:bg-white after:h-[3px] after:w-0 after:left-0 after:bottom-[-10px] after:transition-[0.3s] after:hover:w-[100%]">
+                    <a href="#projects-section">Projetos</a>
+                </li>
 
-            <span class="text-white font-semibold">Avenida 10</span>
-
-            <div class="bg-green-500 mt-4 px-3 py-1 rounded-md" id="hour">
-                <span class="text-white shadow-lg font-semibold">Seg á Dom - 18:00 as 22:00</span>
-            </div>
-
-        </div>
-
+                <li id="after"
+                    class="hover:scale-105 duration-150 after:content-[''] after:absolute after:bg-white after:h-[3px] after:w-0 after:left-0 after:bottom-[-10px] after:transition-[0.3s] after:hover:w-[100%]">
+                    <a href="#contacts">Contato</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
+    <section id="home">
+        <div id="texts" class="invisible z-0 text-center text-white font-semibold pt-32 md:pt-96 xl:pt-[26rem]">
 
-    <!--Section-->
-    <section class="pb-20">
-        <!--Título-->
-        <h2 class="text-2xl md:text-4xl font-bold text-center mt-9 mb-9">
-            Conheça nosso menu
-        </h2>
+            <span id="name" class="font-light text-5xl after:block after:m-auto after:content-[''] after:bg-white after:w-60 after:h-[1px] after:mt-24
+            md:after:content-[]">Olá, eu <br class="md:hidden">sou o <br class="md:hidden"><span
+                    class="font-semibold">Eduardo!</span></span>
 
-        <!--Menu-->
-        <div id="menu">
-            <main class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 mx-auto max-w-7xl pb-10">
+            <h1 id="frontend" class="text-5xl font-normal mt-20 mb-20 md:mb-10 md:mt-4 md:text-7xl after:block after:m-auto after:content-[''] after:bg-white after:w-60 after:h-[1px] after:mt-24
+                md:after:content-[]"> Desenvolvedor<br class="lg:hidden"> <span class="font-semibold">Frontend</span>
+            </h1>
 
-                <div class="flex gap-2 px-6 lg:px-2">
-                    <img src="./assets/hamb-1.png" alt="Hamburguer Smash"
-                        class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
-
-                    <div>
-                        <p class="font-bold">Hamburguer Smash</p>
-                        <p class="text-sm">Pão levinho de fermentação natural de trigo, Hamburguer 160g, Queijo Prato e
-                            Maioneses da Casa.</p>
-
-                        <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
-                            <p class="font-bold text-base">R$24,90</p>
-
-                            <div>
-                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                                    data-name="Hamburguer Smash" data-price="24.90">
-                                    <i id="icon-cart" class="fa fa-cart-plus text-xs text-white"></i>
-                                </button>
-                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
-                                    data-name="Hamburguer Smash" data-price="24.90">
-                                    <span class="text-white">-</span>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="flex gap-2 px-6 lg:px-2">
-                    <img src="./assets/hamb-2.png" alt="Hamburguer da Casa"
-                        class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
-
-                    <div>
-                        <p class="font-bold">Hamburguer da Casa</p>
-                        <p class="text-sm">Pão levinho de fermentação natural de trigo, Hamburguer 160g, Queijo Prato e
-                            Maioneses da Casa.</p>
-
-                        <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
-                            <p class="font-bold text-base">R$29,90</p>
-
-                            <div>
-                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                                    data-name="Hamburguer da Casa" data-price="29.90">
-                                    <i class="fa fa-cart-plus text-xs text-white"></i>
-                                </button>
-                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
-                                    data-name="Hamburguer da Casa" data-price="29.90">
-                                    <span class="text-white">-</span>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="flex gap-2 px-6 lg:px-2">
-                    <img src="./assets/hamb-8.png" alt="Hamburguer Vegano"
-                        class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
-
-                    <div>
-                        <p class="font-bold">Hamburguer Vegano</p>
-                        <p class="text-sm">Pão levinho de fermentação natural de trigo, Hamburguer 160g, Queijo Prato e
-                            Maioneses da Casa.</p>
-
-                        <div class="flex items-center gap-4 mt-2 lg:mt-4 justify-between">
-                            <p class="font-bold text-base">R$22,90</p>
-                            <div>
-                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                                    data-name="Hamburguer Vegano" data-price="22.90">
-                                    <i class="fa fa-cart-plus text-xs text-white"></i>
-                                </button>
-                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
-                                    data-name="Hamburguer Vegano" data-price="22.90">
-                                    <span class="text-white">-</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="flex gap-2 px-6 lg:px-2">
-                    <img src="./assets/hamb-7.png" alt="Onion Burguer"
-                        class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
-
-                    <div>
-                        <p class="font-bold">Onion Burguer</p>
-                        <p class="text-sm">Pão levinho de fermentação natural de trigo, Hamburguer 160g, Queijo Prato e
-                            Maioneses da Casa.</p>
-
-                        <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
-                            <p class="font-bold text-base">R$32,90</p>
-
-                            <div>
-                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                                    data-name="Onion Burguer" data-price="32.90">
-                                    <i class="fa fa-cart-plus text-xs text-white"></i>
-                                </button>
-                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
-                                    data-name="Onion Burguer" data-price="32.90">
-                                    <span class="text-white">-</span>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="flex gap-2 px-6 lg:px-2">
-                    <img src="./assets/hamb-3.png" alt="Hamburguer Duplo-Queijo"
-                        class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
-
-                    <div>
-                        <p class="font-bold">Hamburguer Duplo-Queijo</p>
-                        <p class="text-sm">Pão levinho de fermentação natural de trigo, Hamburguer 160g, Queijo Prato e
-                            Maioneses da Casa.</p>
-
-                        <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
-                            <p class="font-bold text-base">R$30,90</p>
-
-                            <div>
-                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                                    data-name="Hamburguer Duplo-Queijo" data-price="30.90">
-                                    <i class="fa fa-cart-plus text-xs text-white"></i>
-                                </button>
-                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
-                                    data-name="Hamburguer Duplo-Queijo" data-price="30.90">
-                                    <span class="text-white">-</span>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="flex gap-2 px-6 lg:px-2">
-                    <img src="./assets/hamb-6.png" alt="Hamburguer com Fritas"
-                        class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
-
-                    <div>
-                        <p class="font-bold">Hamburguer com Fritas</p>
-                        <p class="text-sm">Pão levinho de fermentação natural de trigo, Hamburguer 160g, Queijo Prato e
-                            Maioneses da Casa.</p>
-
-                        <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
-                            <p class="font-bold text-base">R$20,90</p>
-
-                            <div>
-                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                                    data-name="Hamburguer com Fritas" data-price="20.90">
-                                    <i class="fa fa-cart-plus text-xs text-white"></i>
-                                </button>
-                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
-                                    data-name="Hamburguer com Fritas" data-price="20.90">
-                                    <span class="text-white">-</span>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="flex gap-2 px-6 lg:px-2">
-                    <img src="./assets/hamb-4.png" alt="Chicken Burguer"
-                        class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
-
-                    <div>
-                        <p class="font-bold">Chicken Burguer</p>
-                        <p class="text-sm">Pão levinho de fermentação natural de trigo, Hamburguer 160g, Queijo Prato e
-                            Maioneses da Casa.</p>
-
-                        <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
-                            <p class="font-bold text-base">R$24,90</p>
-
-                            <div>
-                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                                    data-name="Chicken Burguer" data-price="24.90">
-                                    <i class="fa fa-cart-plus text-xs text-white"></i>
-                                </button>
-                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
-                                    data-name="Chicken Burguer" data-price="24.90">
-                                    <span class="text-white">-</span>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="flex gap-2 px-6 lg:px-2">
-                    <img src="./assets/hamb-5.png" alt="Hamburguer de Salada"
-                        class="w-28 h-28 rounded-md shadow-lg hover:scale-105 duration-200" />
-
-                    <div>
-                        <p class="font-bold">Hamburguer de Salada</p>
-                        <p class="text-sm">Pão levinho de fermentação natural de trigo, Hamburguer 160g, Queijo Prato e
-                            Maioneses da Casa.</p>
-
-                        <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
-                            <p class="font-bold text-base">R$22,90</p>
-
-                            <div>
-                                <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                                    data-name="Hamburguer de Salada" data-price="22.90">
-                                    <i class="fa fa-cart-plus text-xs text-white"></i>
-                                </button>
-                                <button class="bg-red-300 px-3 rounded hover:scale-105 duration-200 remove-from-cart-btn"
-                                    data-name="Hamburguer de Salada" data-price="22.90">
-                                    <span class="text-white">-</span>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </main>
-
+            <span id="quote" class="font-extralight"><span class="font-semibold">Apaixonado</span> por criar<br
+                    class="md:hidden">
+                <span class="font-normal">experiências digitais memoráveis.</span></span>
         </div>
-
-        <!--Bebidas-->
-
-        <div class="hidden mx-auto max-w-7xl my-12">
-            <h2 class="mx-auto max-w-7xl px-6 lg:px-2 font-bold text-3xl mb-6">
-                Bebidas
-            </h2>
-        </div>
-
-        <div class="pb-10 hidden grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-10 mx-auto max-w-7xl">
-            <div class="flex gap-4 px-6 lg:px-2">
-                <img src="./assets/refri-1.png" alt="Hamburguer Smash"
-                    class="w-28 h-28 rounded-md hover:scale-105 duration-200" />
-
-                <div>
-                    <p class="font-bold">Cola-Cola Lata</p>
-                    <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
-                        <p class="font-bold text-base">R$6,00</p>
-                        <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                            data-name="Coca-Cola Lata" data-price="6,00">
-                            <i class="fa fa-cart-plus text-xs text-white"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="flex gap-4 px-6 lg:px-2">
-                <img src="./assets/refri-2.png" alt="Hamburguer Smash"
-                    class="w-28 h-28 rounded-md hover:scale-105 duration-200" />
-
-                <div>
-                    <p class="font-bold">Guaraná Lata</p>
-                    <div class="flex items-center gap-4 mt-2 md:mt-2 justify-between">
-                        <p class="font-bold text-base">R$6,00</p>
-                        <button class="bg-zinc-800 px-4 rounded hover:scale-105 duration-200 add-to-cart-btn"
-                            data-name="Guaraná Lata" data-price="6,00">
-                            <i class="fa fa-cart-plus text-xs text-white"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!--Modal-->
-        <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] hidden items-center justify-center" id="modal">
-            <div
-                class="bg-white font-semibold text-base mt-6 mb-6 p-5 rounded-md min-w-[90%] md:min-w-[600px] min-h-[30%] max-h-[80%] overflow-y-auto">
-                <h2 class="text-center text-2xl">Seu carrinho</h2>
-                <div id="cart-items" class="flex font-medium justify-between mb-2 flex-col"></div>
-                <label for="adress" class="mt-4">Endereço de entrega:</p>
-                    <input type="text" placeholder="Digite aqui seu endereço..." id="adress" name="adress"
-                        class="text-base w-full p-1 border-2 outline-none placeholder:font-medium">
-
-                    <p class="hidden text-red-500 text-sm font-medium mt-1 mb-4" id="adress-warning">Digite seu endereço
-                        corretamente!</p>
-
-                    <div class="mt-6">
-                        <label for="obs">Observações<span
-                                class="ml-[.1em] font-medium text-xs tracking-normal">(opcional)</span>:</p>
-                            <input type="text" placeholder="Digite aqui as observações do pedido..." id="obs" name="obs"
-                                class="text-base w-full p-1 border-2 outline-none mb-6 placeholder:font-medium">
-                    </div>
-
-                    <div>
-                        <label for="obs">Método de pagamento:</p>
-                            <input type="text" placeholder="Digite aqui o método de pagamento..." id="payment"
-                                name="payment"
-                                class="text-base w-full p-1 border-2 outline-none placeholder:font-medium">
-                            <p class="hidden text-red-500 text-sm mt-1 font-medium" id="payment-warning">Digite o método
-                                de pagamento corretamente!</p>
-                    </div>
-
-
-                    <p class="mt-6">Total: <span id="cart-total">R$00,00</span></p>
-
-                    <div class="mt-6 flex justify-between">
-                        <button id="close-modal-btn"
-                            class="hover:text-red-500 hover:scale-105 duration-200">Fechar</button>
-                        <button id="checkout-btn"
-                            class="bg-green-500 text-white px-2 py-1 rounded hover:scale-105 duration-200">Finalizar
-                            Pedido</button>
-                    </div>
-            </div>
-        </div>
-
     </section>
 
 
-    <!--Footer-->
-    <footer class="cursor-pointer w-full bg-red-500 py-2 text-center fixed bottom-0 hover:py-3 duration-500"
-        id="open-cart-btn">
-        <div class="font-bold text-white">
-            ( <span id="cart-count">0</span> ) Carrinho
-            <i class="fa fa-cart-plus text-lg text-white"></i>
+
+    <section id="techs-section" class="min-h-[100vh]">
+        <div id="techs" class="text-center pt-80">
+            <h1 class="text-white text-4xl">&lt;/Tecnologias&gt;</h1>
+
+            <div
+                class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:max-w-[70vw] lg:m-auto lg:pt-16 xl:max-w-[60vw] 2xl:max-w-[50vw] mt-16 gap-y-10">
+
+                <div
+                    class="flex justify-center flex-col items-center gap-4 hover:scale-110 duration-150 cursor-default">
+                    <img class="w-16 to-white" src="assets/html5.svg">
+                    <span class="cursor-default text-white text-xl">HTML5</span>
+                </div>
+
+                <div
+                    class="flex justify-center flex-col items-center gap-4 hover:scale-110 duration-150 cursor-default">
+                    <img class="w-16 to-white" src="assets/css3-alt.svg">
+                    <span class="text-white text-xl">CSS3</span>
+                </div>
+
+                <div
+                    class="flex justify-center flex-col items-center gap-4 hover:scale-110 duration-150 cursor-default">
+                    <img class="w-16 to-white" src="assets/js.svg">
+                    <span class="text-white justify-self-end text-xl">JavaScript</span>
+                </div>
+
+                <div
+                    class="flex justify-center flex-col items-center gap-4 hover:scale-110 duration-150 cursor-default">
+                    <img class="w-16 to-white" src="assets/Typescript_logo_2020.svg.png">
+                    <span class="text-white text-xl">TypeScript</span>
+                </div>
+
+                <div
+                    class="flex justify-center flex-col items-center gap-4 hover:scale-110 duration-150 cursor-default">
+                    <img class="w-16 to-white" src="assets/sass.svg">
+                    <span class="text-white mt-6 text-xl">SASS</span>
+                </div>
+
+                <div
+                    class="flex justify-center flex-col items-center gap-4 hover:scale-110 duration-150 cursor-default">
+                    <img class="w-16 to-white" src="assets/tailwind_icon_131947.png">
+                    <span class="text-white text-xl">Tailwind</span>
+                </div>
+
+                <div
+                    class="flex justify-center flex-col items-center gap-4 hover:scale-110 duration-150 cursor-default">
+                    <img class="w-16 to-white" src="assets/git.svg.png">
+                    <span class="text-white mt-4 text-xl">Git</span>
+                </div>
+
+                <div
+                    class="flex justify-center flex-col items-center gap-4 hover:scale-110 duration-150 cursor-default">
+                    <img class="w-16 to-white" src="assets/github.svg">
+                    <span class="text-white text-xl">Github</span>
+                </div>
+
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <section id="projects-section" class="min-h-[100vh] pt-36">
+        <h1 id="projects-text" class="text-white text-center pb-24 text-4xl">&lt;/Projetos&gt;</h1>
+
+        <div class="flex flex-col items-center">
+            <div id="projects"
+                class="flex flex-col text-center gap-14 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div id="menu" class="hover:scale-110 duration-200">
+                    <h2 class="text-white text-xl">Cardápio Menu</h2>
+                    <span class="text-white">Tecnologias Utilizadas: </span>
+                    <a href="https://eduardossoares.github.io/menu-cardapio/" target="_blank">
+                        <div class="relative mt-8">
+                            <div id="menu-id" class="w-64 h-96 rounded-3xl bg-cover"></div>
+                            <div class="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center gap-10">
+                                <div class="flex flex-row gap-2 absolute top-[-14px]">
+                                    <img src="assets/js.svg" alt="" class="w-8">
+                                    <img src="assets/tailwind_icon_131947.png" alt="" class="w-8">
+                                </div>
+                                <span class="text-white text-4xl font-bold">Acesse o Deploy</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div id="forecast" class="mt-20 md:mt-0 hover:scale-110 duration-200">
+                    <h2 class="text-white text-xl">Forecast Climático</h2>
+                    <span class="text-white">Tecnologias Utilizadas: </span>
+                    <a href="https://eduardossoares.github.io/forecast/" target="_blank">
+                        <div class="relative mt-8">
+                            <div id="forecast-id" class="w-64 h-96 rounded-3xl bg-cover"></div>
+                            <div class="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center gap-10">
+                                <div class="flex flex-row gap-2 absolute top-[-14px]">
+                                    <img src="assets/js.svg" alt="" class="w-8">
+                                    <img src="assets/tailwind_icon_131947.png" alt="" class="w-8">
+                                </div>
+                                <span class="text-white text-4xl font-bold">Acesse o Deploy</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div id="barbershop" class="mt-20 lg:mt-0 hover:scale-110 duration-200">
+                    <h2 class="text-white text-xl">Landingpage Barbershop</h2>
+                    <span class="text-white">Tecnologias Utilizadas: </span>
+                    <a href="https://eduardossoares.github.io/landingpage-barbearia/" target="_blank">
+                        <div class="relative mt-8">
+                            <div id="barbershop-id" class="w-64 h-96 rounded-3xl bg-cover bg-center">
+                            </div>
+                            <div class="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center gap-10">
+                                <div class="flex flex-row gap-2 absolute top-[-14px]">
+                                    <img src="assets/html5.svg" alt="" class="w-8">
+                                    <img src="assets/js.svg" alt="" class="w-8">
+                                    <img src="assets/css3-alt.svg" alt="" class="w-8">
+                                </div>
+                                <span class="text-white text-4xl font-bold">Acesse o Deploy</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div id="capture-page" class="mt-20 xl:hidden hover:scale-110 duration-200">
+                    <h2 class="text-white text-xl">Página de Captura</h2>
+                    <span class="text-white">Tecnologias Utilizadas: </span>
+                    <a href="https://eduardossoares.github.io/pagina-de-captura-responsiva/" target="_blank">
+                        <div class="relative mt-8">
+                            <div id="capture-page-id" class="w-64 h-96 rounded-3xl bg-cover bg-center">
+                            </div>
+                            <div class="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center gap-10">
+                                <div class="flex flex-row gap-2 absolute top-[-14px]">
+                                    <img src="assets/html5.svg" alt="" class="w-8">
+                                    <img src="assets/css3-alt.svg" alt="" class="w-8">
+                                </div>
+                                <span class="text-white text-4xl font-bold">Acesse o Deploy</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div id="to-do-list" class="mt-20 xl:mt-0 hover:scale-110 duration-200">
+                    <h2 class="text-white text-xl">Lista de Afazeres</h2>
+                    <span class="text-white">Tecnologias Utilizadas: </span>
+                    <a href="https://eduardossoares.github.io/to-do-list/" target="_blank">
+                        <div class="relative mt-8">
+                            <div id="to-do-list-id" class="w-64 h-96 rounded-3xl bg-cover bg-center">
+                            </div>
+                            <div class="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center gap-10">
+                                <div class="flex flex-row gap-2 absolute top-[-14px]">
+                                    <img src="assets/html5.svg" alt="" class="w-8">
+                                    <img src="assets/js.svg" alt="" class="w-8">
+                                    <img src="assets/sass.svg" alt="" class="w-8">
+                                </div>
+                                <span class="text-white text-4xl font-bold">Acesse o Deploy</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <section class="h-[80vh] pt-80 md:h-[100vh] xl:pt-36 xl:h-[70vh]" id="contacts">
+        <div id="contact-text" class="text-center">
+            <h1 id="contato" class="text-white text-4xl text-center">&lt;/Contato&gt;</h1>
+            <span class="text-white">Clique para acessar</span>
+        </div>
+
+        <div class="mt-16 flex flex-col justify-center items-center md:flex-row md:items-start md:gap-x-24">
+
+            <div id="linkedin" class="text-center hover:scale-110 duration-200">
+                <a href="https://www.linkedin.com/in/eduardo-da-silva-soares/" target="_blank">
+                    <span class="text-white text-2xl">LinkedIn</span>
+                    <img src="assets/linkedin.png" class="w-28 mt-4 mb-20 md:mb-0" alt="">
+                </a>
+            </div>
+
+            <div id="cv" class="text-center hover:scale-110 duration-200">
+                <a href="https://drive.google.com/file/d/16z4zeAKDRJC2FVFSILOL8KrO7ZDYpkE6/view" target="_blank">
+                    <span class="text-white text-2xl">Currículo</span>
+                    <img src="assets/file-solid.png" class="w-24 mt-4 mb-20 md:mb-0" alt="">
+                </a>
+            </div>
+
+            <div id="github-img" class="text-center hover:scale-110 duration-200">
+                <a href="https://github.com/eduardossoares" target="_blank">
+                    <span class="text-white text-2xl">Github</span>
+                    <img src="assets/github.svg" class="w-28 mt-4 mb-20 md:mb-0" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
 </body>
 
 </html>

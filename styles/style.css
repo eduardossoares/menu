@@ -2,16 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+#menu-id {
+    background-image: url('../assets/menu.png');
 }
 
-body {
-    background-color: rgb(230, 234, 238);
+#forecast-id {
+    background-image: url('../assets/forecast.png');
 }
 
-#header-bg {
-    background-image: url('../assets/bg.png');
+#barbershop-id {
+    background-image: url('../assets/barbershop.png');
+}
+
+#to-do-list-id {
+    background-image: url('../assets/to-do-list.png');
+}
+
+#capture-page-id {
+    background-image: url('../assets/capture-page.png');
 }
