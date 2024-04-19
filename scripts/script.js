@@ -40,114 +40,9 @@ const workingModal = () => {
         }
     })
 
-    if (modal.classList.contains('flex')) {
-        body.classList.add('overflow-y')
-    }
 }
 
 workingModal()
-
-const addToCart = (name, price) => {
-
-    const hasItem = cart.find(item => item.name === name)
-
-    if (hasItem) {
-        hasItem.quantity += 1
-        return
-    }
-
-    cart.push({
-        name,
-        price,
-        quantity: 1
-    })
-
-    updateCartModal()
-
-    Toastify({
-        text: `${name} foi adicionado ao carrinho.`,
-        duration: 3000,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "center", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "#6aa84f",
-        },
-    }).showToast()
-}
-
-const removeFromCart = (name, price) => {
-    const hasItem = cart.find(item => item.name === name)
-
-    if (hasItem) {
-        hasItem.quantity -= 1
-    }
-
-    cart.pop({
-        name,
-        price,
-        quantity: 1
-    })
-
-    updateCartModal()
-
-    Toastify({
-        text: `${name} foi removido do carrinho.`,
-        duration: 3000,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "center", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "#ef4444",
-        },
-    }).showToast()
-}
-
-menu.addEventListener('click', (event) => {
-    let parentButton = event.target.closest('.add-to-cart-btn')
-    let rmvParentButton = event.target.closest('.remove-from-cart-btn')
-
-    if (parentButton) {
-        cartButtons(parentButton, 'bg-zinc-800', 'bg-zinc-400')
-        cartButtons(parentButton.nextElementSibling, 'bg-red-300', 'bg-red-400')
-
-        let name = parentButton.getAttribute('data-name')
-        let price = parseFloat(parentButton.getAttribute('data-price'))
-
-        const hasItem = cart.find(item => item.name === name)
-
-        
-        if (hasItem) {
-            return
-        }
-        
-        addToCart(name, price)
-    }
-
-
-    if (rmvParentButton) {
-        cartButtons(rmvParentButton, 'bg-red-400', 'bg-red-300')
-        cartButtons(rmvParentButton.previousElementSibling, 'bg-zinc-400', 'bg-zinc-800')
-
-        let name = rmvParentButton.getAttribute('data-name')
-        let price = parseFloat(rmvParentButton.getAttribute('data-price'))
-
-        const hasItem = cart.find(item => item.name === name)
-
-        if (!hasItem) {
-            return
-        }
-
-        removeFromCart(name, price)
-    }
-})
-
-const cartButtons = (value, defaultColor, blockColor) => {
-    value.classList.add(`${blockColor}`)
-    value.classList.remove(`${defaultColor}`)
-}
 
 const updateCartModal = () => {
     cartItems.innerHTML = ''
@@ -186,6 +81,115 @@ const updateCartModal = () => {
 
     cartCounter.innerText = cart.length
 }
+
+const addToCart = (name, price) => {
+
+    const hasItem = cart.find(item => item.name === name)
+
+    if (hasItem) {
+        hasItem.quantity += 1
+        return
+    }
+
+    cart.push({
+        name,
+        price,
+        quantity: 1
+    })
+
+    Toastify({
+        text: `${name} foi adicionado ao carrinho.`,
+        className: 'max-w-[80%]',
+        duration: 1500,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "#6aa84f",
+        },
+    }).showToast()
+
+    updateCartModal()
+}
+
+const removeFromCart = (name, price) => {
+    const hasItem = cart.find(item => item.name === name)
+
+    if (hasItem) {
+        hasItem.quantity -= 1
+    }
+
+    cart.pop({
+        name,
+        price,
+        quantity: 1
+    })
+
+    Toastify({
+        text: `${name} foi removido do carrinho.`,
+        className: 'max-w-[80%]',
+        duration: 1500,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "#ef4444",
+            width: 500,
+        },
+    }).showToast()
+
+    updateCartModal()
+}
+
+menu.addEventListener('click', (event) => {
+    let parentButton = event.target.closest('.add-to-cart-btn')
+    let rmvParentButton = event.target.closest('.remove-from-cart-btn')
+
+    if (parentButton) {
+        cartButtons(parentButton, 'bg-zinc-800', 'bg-zinc-400')
+        cartButtons(parentButton.nextElementSibling, 'bg-red-300', 'bg-red-400')
+        parentButton.nextElementSibling.disabled = false
+
+        let name = parentButton.getAttribute('data-name')
+        let price = parseFloat(parentButton.getAttribute('data-price'))
+
+        const hasItem = cart.find(item => item.name === name)
+
+        
+        if (hasItem) {
+            return
+        }
+        
+        addToCart(name, price)
+    }
+
+
+    if (rmvParentButton) {
+        cartButtons(rmvParentButton, 'bg-red-400', 'bg-red-300')
+        cartButtons(rmvParentButton.previousElementSibling, 'bg-zinc-400', 'bg-zinc-800')
+
+        let name = rmvParentButton.getAttribute('data-name')
+        let price = parseFloat(rmvParentButton.getAttribute('data-price'))
+
+        const hasItem = cart.find(item => item.name === name)
+
+        if (!hasItem) {
+            return
+        }
+
+        removeFromCart(name, price)
+    }
+
+    updateCartModal()
+})
+
+const cartButtons = (value, defaultColor, blockColor) => {
+    value.classList.add(`${blockColor}`)
+    value.classList.remove(`${defaultColor}`)
+}
+
 
 cartItems.addEventListener('click', (event) => {
     if (event.target.classList.contains('remove-from-cart-btn')) {
@@ -277,7 +281,8 @@ checkOut.addEventListener('click', () => {
     if (!isOpen) {
         Toastify({
             text: "Ops! Estamos Fechados no Momento...",
-            duration: 3000,
+            className: 'max-w-[80%]',
+            duration: 2000,
             close: true,
             gravity: "top", // `top` or `bottom`
             position: "center", // `left`, `center` or `right`
