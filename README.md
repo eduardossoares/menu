@@ -16,6 +16,29 @@ Este é um projeto feito em conjunto com o professor Matheus Fraga do canal "Suj
 
 4. Redirecionamento para o WhatsApp do estabelecimento para finalizar o pedido.
 
+## Requisitos
+Para executar este projeto localmente, é necessário ter instalado:
+
+Node.js;
+npm (gerenciador de pacotes do Node.js);
+TailwindCSS.
+
+Como Executar:
+1. Clone esse repositório:
+```bash
+git clone https://github.com/seu-usuario/menu-cardapio.git
+```
+
+2. Acesse a pasta do projeto:
+```bash
+cd menu-cardapio
+```
+
+3. Execute o arquivo:
+```bash
+start index.html
+```
+
 ## Tecnologias Utilizadas
 
 - JavaScript: Linguagem de programação para funcionalidades interativas.
