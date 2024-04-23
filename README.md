@@ -26,7 +26,7 @@ TailwindCSS.
 Como Executar:
 1. Clone esse repositório:
 ```bash
-git clone https://github.com/seu-usuario/menu-cardapio.git
+git clone https://github.com/eduardossoares/menu-cardapio.git
 ```
 
 2. Acesse a pasta do projeto:
